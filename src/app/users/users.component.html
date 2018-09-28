@@ -1,0 +1,25 @@
+<form #form="ngForm" (ngSubmit)="onSubmit(form)">
+  <select name="user" id="user" ngModel>
+    <option hidden value="" selected> Choose user </option>
+    <option *ngFor="let user of users" [ngValue]="user">{{ user.firstName }} {{ user.surname }}</option>
+  </select>
+  <button class="btn-search">search user</button>
+</form>
+
+<div class="card" *ngIf="user">
+  <h2>{{user.firstName}} {{user.surname}}, {{user.age ? user.age : "unknown"}} years old.</h2>
+  <div class="buttons">
+    <button class="btn-friends" (click)="findFriends()">my friends</button>
+    <button class="btn-friends" (click)="findFriendsOfFriends()">friends of friends</button>
+    <button class="btn-friends" (click)="suggestedFriends()">suggested friends</button>
+  </div>
+</div>
+
+<div class="card" *ngIf="filteredFriends">
+  <div *ngFor="let friend of filteredFriends">
+    <h2> {{friend.firstName}} {{friend.surname}}, {{friend.age ? friend.age : "unknown"}} years old.
+    </h2>
+  </div>
+</div>
+
+<h2 class="warning" *ngIf="suggestion && !filteredFriends.length"> No suggestions!</h2>

@@ -1,0 +1,62 @@
+form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.btn-search {
+    padding: 10px 5px 10px 5px;
+    border-radius: 5px;
+    color: white;
+    background-color: #3eb891;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    width: 150px;
+    margin-left:20px;
+}
+
+select {
+    border-radius: 5px;
+    padding-left: 5px;
+    font-size: 16px;
+    color: #2d333a;
+    width:150px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    margin-right:20px;
+    margin-left:20px;
+}
+
+h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:20px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+}
+
+.btn-friends {
+    padding: 10px 5px 10px 5px;
+    border-radius: 5px;
+    color: white;
+    background-color: #3eb891;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    width: 150px;
+}
+
+.btn-friends:not(:last-of-type) {
+    margin-right:20px;
+}
+
+.warning {
+    margin-left: 20px;
+    color: red;
+}
