@@ -42,8 +42,8 @@ export class UsersService {
     suggestFriends(userID: number) {
         const myfriendsID = this.getUser(userID).friends;
         const friendsOfFriendsID = this.findFriendsOfFriends(userID).map(e => e.id);
-        const sugestedFriends = friendsOfFriendsID.filter(e => Array.from(new Set(
-            [...this.getUser(e).friends].filter(x => myfriendsID.includes(x)))).length >= 2);
+        const sugestedFriends = friendsOfFriendsID.filter(e =>
+            this.getUser(e).friends.filter(x => myfriendsID.includes(x)).length >= 2);
         return sugestedFriends.map(e => this.users.find(o => o.id === e));
     }
 }
